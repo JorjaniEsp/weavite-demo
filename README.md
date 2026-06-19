@@ -26,6 +26,15 @@ La interfaz web tiene dos vistas:
 - **Python** 3.10 o superior: https://www.python.org/downloads
 - Una API key gratuita de **Groq**: https://console.groq.com
 
+### Clonación
+
+Sigue estos pasos para obtener una copia del proyecto y ejecutarlo en tu computadora:
+
+1. Abre tu terminal.
+2. Clona este repositorio ejecutando el siguiente comando:
+   ```bash
+   git clone https://github.com/JorjaniEsp/weavite-demo.git
+
 ### Configuración de Variables de Entorno
 
 
