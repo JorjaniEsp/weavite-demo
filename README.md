@@ -97,5 +97,5 @@ Si durante la demostración el navegador, Node o la conexión a Groq fallan, est
 permite consultar la base de datos vectorial directamente desde la terminal:
 
 ```powershell
-python scripts/busqueda_respaldo.py
+python scripts/busqueda.py
 ```
