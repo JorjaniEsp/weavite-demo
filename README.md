@@ -1,4 +1,4 @@
-# Explorador Vectorial Weaviate — Netflix RAG
+# Demostración Busqueda Vectorial Con Weaviate — Netflix RAG
 
 Proyecto del curso **IF0007 – Bases de Datos I**.
 
