@@ -1,0 +1,24 @@
+{
+  "name": "weaviate-rag-netflix",
+  "version": "1.0.0",
+  "description": "Demostración de base de datos vectorial (Weaviate) con búsqueda semántica y síntesis generativa vía Groq, sobre un dataset de títulos de Netflix. Proyecto del curso IF0007 - Bases de Datos I, Grupo 4.",
+  "type": "module",
+  "main": "servidor/server.js",
+  "scripts": {
+    "start": "node servidor/server.js",
+    "ingest": "python servidor/ingest.py",
+    "buscar": "python scripts/busqueda_respaldo.py"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "2.8.6",
+    "csv-parser": "3.2.1",
+    "dotenv": "^16.4.5",
+    "express": "5.2.1",
+    "openai": "6.42.0",
+    "pdfreader": "3.0.8",
+    "weaviate-client": "3.13.1"
+  }
+}

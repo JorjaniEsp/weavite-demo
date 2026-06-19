@@ -1,0 +1,1 @@
+Las bases de datos vectoriales indexan datos basados en embeddings de alta dimensión. A diferencia de las bases de datos relacionales tradicionales que buscan coincidencias exactas mediante SQL, Weaviate utiliza algoritmos como HNSW para encontrar elementos por similitud semántica o conceptual, ideal para sistemas RAG.

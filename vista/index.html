@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador Vectorial Weaviate</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<div class="container">
+    <header class="encabezado">
+        <h1>Explorador Vectorial Weaviate</h1>
+        <p class="subtitulo">Laboratorio de Bases de Datos &mdash; Motor Semántico</p>
+    </header>
+
+    <nav class="tabs" role="tablist">
+        <button class="tab-btn is-activo" id="tabBusqueda" role="tab" aria-selected="true" aria-controls="vistaBusqueda">
+            Búsqueda
+        </button>
+        <button class="tab-btn" id="tabCatalogo" role="tab" aria-selected="false" aria-controls="vistaCatalogo">
+            Catálogo completo
+        </button>
+    </nav>
+
+    <section id="vistaCatalogo" class="vista-panel" role="tabpanel" aria-labelledby="tabCatalogo" hidden>
+        <p class="descripcion-vista">
+            Contenido crudo de la colección <strong>Articulo</strong>, sin pasar por búsqueda
+            semántica ni por la capa generativa. Así se ven los datos almacenados en el
+            espacio vectorial.
+        </p>
+
+        <div id="loadingCatalogo" class="loading">Consultando la colección completa&hellip;</div>
+        <div id="catalogoBox" class="catalogo-box"></div>
+    </section>
+
+    <section id="vistaBusqueda" class="vista-panel" role="tabpanel" aria-labelledby="tabBusqueda">
+        <div class="input-group">
+            <input type="text" id="preguntaInput" placeholder="Ej: Películas de acción con robos o crímenes...">
+        </div>
+
+        <div class="controles-avanzados">
+            <label class="toggle-ia">
+                <input type="checkbox" id="checkIA" checked>
+                Mejorar con IA (Groq)
+            </label>
+
+            <div class="divisor"></div>
+
+            <label class="selector-limite">
+                Nodos a recuperar:
+                <select id="selectLimite">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected>3</option>
+                    <option value="5">5</option>
+                </select>
+            </label>
+
+            <div class="botones-accion">
+                <button id="btnLimpiar">Limpiar</button>
+                <button id="btnEnviar">Buscar</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">Pensando y consultando al espacio vectorial&hellip;</div>
+
+        <div id="resultadoBox" class="resultado-box"></div>
+    </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+version: '3.4'
+services:
+  weaviate:
+    command:
+    - --host
+    - 0.0.0.0
+    - --port
+    - '8080'
+    - --scheme
+    - http
+    image: cr.weaviate.io/semitechnologies/weaviate:1.27.0
+    ports:
+    # Respetamos estrictamente los puertos de tu compañero
+    - 8090:8080
+    - 50060:50051
+    restart: on-failure:0
+    environment:
+      TRANSFORMERS_INFERENCE_API: 'http://t2v-transformers:8080'
+      QUERY_DEFAULTS_LIMIT: 25
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
+      PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
+      DEFAULT_VECTORIZER_MODULE: 'text2vec-transformers'
+      ENABLE_MODULES: 'text2vec-transformers'
+      CLUSTER_HOSTNAME: 'node1'
+    depends_on:
+      - t2v-transformers
+
+  t2v-transformers:
+    # Este es el modelo bilingüe que entiende español e inglés de forma nativa
+    image: semitechnologies/transformers-inference:sentence-transformers-paraphrase-multilingual-MiniLM-L12-v2
+    ports:
+    # NUEVO: expone el puerto al host para poder pedirle el vector de la
+    # pregunta directamente desde server.js (fuera de la red de Docker)
+    - 8091:8080
+    environment:
+      ENABLE_CUDA: '0' # Apagado para que corra en cualquier computadora sin necesidad de tarjeta gráfica especial
