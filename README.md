@@ -58,10 +58,17 @@ docker ps
 pip install -r requirements.txt
 ```
 
+### 2.a Posible fallo de pip
+En dado caso que pip no funcione, pruebe de la siguiente manera:
+
+```powershell
+py -m pip install -r requirements.txt
+```
+
 ### 3. Cargar los datos (ingesta)
 
 ```powershell
-python servidor/ingest.py
+python scripts/ingest.py
 ```
 
 Esto borra y recrea la colección `Articulo`, y carga las películas del CSV
