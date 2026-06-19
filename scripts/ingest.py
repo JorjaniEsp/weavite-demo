@@ -23,7 +23,7 @@ try:
     )
     print(f"Colección '{nombre_coleccion}' re-creada.")
 
-    archivo_csv = "datos/netflix_titles.csv"  
+    archivo_csv = "datos/netflix_titles_10_rows.csv"  
     contador_exito = 0
     contador_errores = 0
 

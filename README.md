@@ -35,13 +35,6 @@ Sigue estos pasos para obtener una copia del proyecto y ejecutarlo en tu computa
    ```bash
    git clone https://github.com/JorjaniEsp/weavite-demo.git
 
-### Configuración de Variables de Entorno
-
-
-1. Crea una copia del archivo de plantilla ejecutando el siguiente comando en tu terminal:
-   ```bash
-   cp .env.example .env
-
 ## Guía de instalación (en orden)
 
 ### 1. Levantar la infraestructura (Docker)
