@@ -6,8 +6,8 @@
   "main": "servidor/server.js",
   "scripts": {
     "start": "node servidor/server.js",
-    "ingest": "python servidor/ingest.py",
-    "buscar": "python scripts/busqueda_respaldo.py"
+    "ingest": "python scripts/ingest.py",
+    "buscar": "python scripts/busqueda.py"
   },
   "keywords": [],
   "author": "",
